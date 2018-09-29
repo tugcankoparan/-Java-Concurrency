@@ -1,4 +1,4 @@
-package com.zimek.executors;
+package com.tugcankoparan.executors;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-/**
- * If task implements {@link Callable} it may return its result.
- * We may use {@link Runnable} which does not return task result. 
- */
+ 
 class TaskWithResult implements Callable<String> {
 	
 	int id;
@@ -38,7 +35,7 @@ public class ExecutorsExample {
 		}
 		for(Future<String> fs: results) {
 			try {
-				System.out.println(fs.get()); //waits for the task to complete and gets result
+				System.out.println(fs.get());  
 			} catch (InterruptedException | ExecutionException e) {
 				e.printStackTrace();
 			} finally {
